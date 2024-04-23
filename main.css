@@ -1,0 +1,56 @@
+body{
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    background-color: rgb(50, 49, 49);
+}
+
+hearder {
+    margin-top: 3em;
+    text-align: center;
+    color: white;
+}
+
+header h1 {
+    position: relative;
+    left: 18em;
+    font-size: 2em;
+    font-weight: 900;
+    color: rgb(255, 255, 255);
+    width: 30vw !important;
+}
+
+#container3D canvas {
+    
+    width: 30vw !important;
+    height: 30vh !important;
+    position: absolute;
+    top: 20;
+    right: 20px;
+    border-radius: 20px;
+}
+
+#container3D1 canvas {          
+    width: 30vw !important;
+    height: 30vh !important;
+    position: absolute;
+    top: 20;
+    right: 20px;
+    left: 20px;
+    border-radius: 20px;
+}
+
+
+
+#goBackButton {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 100;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

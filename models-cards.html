@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stacked Cards</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+    <link rel="stylesheet" href="models-cards.css">
+    <link rel="stylesheet" href="navbar.css">
+    
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+    <div class="main-container">
+        <div class="card-container" style="flex-direction: row;"> <!-- Changed to column for stacking -->
+            <!-- Repeat the following block for each card you want to display -->
+            <div class="card-wrapper">
+                <div class="card">
+                    <a href="index.html">
+                        <img src="gamepad.jpg" alt="Card Image" class="card-image">
+                    </a>
+                    <div class="cards-title">Models</div>
+                </div>
+            </div>
+            <div class="card-wrapper">
+                <div class="card">
+                    <a href="index.html">
+                        <img src="gamepad.jpg" alt="Card Image" class="card-image">
+                    </a>
+                    <div class="cards-title">AR</div>
+                </div>
+            </div>
+            <div class="card-wrapper">
+                <div class="card">
+                    <a href="index.html">
+                        <img src="gamepad.jpg" alt="Card Image" class="card-image">
+                    </a>
+                    <div class="cards-title">Interactive 3D Experience</div>
+                </div>
+
+                
+
+                
+            </div>
+            <!-- Add more cards as needed -->
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="card-container" style="flex-direction: row;"> <!-- Changed to column for stacking -->
+            <!-- Repeat the following block for each card you want to display -->
+            <div class="card-wrapper">
+                <div class="card">
+                    <a href="index.html">
+                        <img src="gamepad.jpg" alt="Card Image" class="card-image">
+                    </a>
+                    <div class="cards-title">Models</div>
+                </div>
+            </div>
+            <div class="card-wrapper">
+                <div class="card">
+                    <a href="index.html">
+                        <img src="gamepad.jpg" alt="Card Image" class="card-image">
+                    </a>
+                    <div class="cards-title">AR</div>
+                </div>
+            </div>
+            <div class="card-wrapper">
+                <div class="card">
+                    <a href="index.html">
+                        <img src="gamepad.jpg" alt="Card Image" class="card-image">
+                    </a>
+                    <div class="cards-title">Interactive 3D Experience</div>
+                </div>
+
+                
+
+                
+            </div>
+            <!-- Add more cards as needed -->
+        </div>
+
+
+
+        </div>
+
+        </div>
+
+        <div class="main-container">
+            <div class="card-container" style="flex-direction: row;"> <!-- Changed to column for stacking -->
+                <!-- Repeat the following block for each card you want to display -->
+                <div class="card-wrapper">
+                    <div class="card">
+                        <a href="index.html">
+                            <img src="gamepad.jpg" alt="Card Image" class="card-image">
+                        </a>
+                        <div class="cards-title">Models</div>
+                    </div>
+                </div>
+                <div class="card-wrapper">
+                    <div class="card">
+                        <a href="index.html">
+                            <img src="gamepad.jpg" alt="Card Image" class="card-image">
+                        </a>
+                        <div class="cards-title">AR</div>
+                    </div>
+                </div>
+                <div class="card-wrapper">
+                    <div class="card">
+                        <a href="index.html">
+                            <img src="gamepad.jpg" alt="Card Image" class="card-image">
+                        </a>
+                        <div class="cards-title">Interactive 3D Experience</div>
+                    </div>
+    
+                    
+    
+                    
+                </div>
+                <!-- Add more cards as needed -->
+            </div>
+
+            </div>
+
+            </div>
+
+            <div class="main-container">
+                <div class="card-container" style="flex-direction: row;"> <!-- Changed to column for stacking -->
+                    <!-- Repeat the following block for each card you want to display -->
+                    <div class="card-wrapper">
+                        <div class="card">
+                            <a href="index.html">
+                                <img src="gamepad.jpg" alt="Card Image" class="card-image">
+                            </a>
+                            <div class="cards-title">Models</div>
+                        </div>
+                    </div>
+                    <div class="card-wrapper">
+                        <div class="card">
+                            <a href="index.html">
+                                <img src="gamepad.jpg" alt="Card Image" class="card-image">
+                            </a>
+                            <div class="cards-title">AR</div>
+                        </div>
+                    </div>
+                    <div class="card-wrapper">
+                        <div class="card">
+                            <a href="index.html">
+                                <img src="gamepad.jpg" alt="Card Image" class="card-image">
+                            </a>
+                            <div class="cards-title">Interactive 3D Experience</div>
+                        </div>
+        
+                        
+        
+                        
+                    </div>
+                    <!-- Add more cards as needed -->
+                </div>
+
+                <script>
+                    function loadNavbar() {
+                        const navbarPlaceholder = document.getElementById('navbar-placeholder');
+                        fetch('navbar.html')
+                            .then(response => response.text())
+                            .then(html => {
+                                navbarPlaceholder.innerHTML = html;
+                                initializeNavbar(); // Initialize navbar functionality after it is loaded
+                            })
+                            .catch(error => console.error('Error loading the navbar:', error));
+                    }
+                
+                    document.addEventListener('DOMContentLoaded', loadNavbar);
+                </script>
+             <script src="navbar.js" ></script>    
+</body>
+</html>

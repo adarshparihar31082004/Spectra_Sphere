@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Experience</title>
+    <link rel="stylesheet" href="ar_page.css">  <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+    <script src="https://cdn.jsdelivr.net/npm/three@0.127.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.127.0/examples/js/loaders/GLTFLoader.js"></script>
+</head>
+<body>
+    <div class="model-viewer" id="model-viewer">
+        <!-- 3D model will be loaded here -->
+    </div>
+    <button id="start-ar">Start AR</button>
+    <button onclick="window.location.href='frontpage.html';">Go Back</button>
+
+    <script type="module" src="ar_page.js"></script>  <!-- Link to your AR script -->
+</body>
+</html>

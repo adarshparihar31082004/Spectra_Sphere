@@ -1,0 +1,80 @@
+/* General body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121316;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    margin: 0;
+}
+
+.main-container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the main container */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allows wrapping of cards */
+    gap: 20px; /* Space between wrapped items */
+    margin-top: 90px;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: row; /* Aligns cards horizontally */
+    justify-content: center; /* Centers cards horizontally in the container */
+    align-items: center; /* Centers cards vertically */
+    flex-wrap: wrap; /* Allows cards to wrap */
+    width: 100%; /* Takes full width */
+    gap: 20px; /* Space between cards */
+    margin: 20px;
+}
+
+.card-wrapper {
+    background-color: #0d0d0d;
+    box-shadow: 0 2px 5px rgba(255, 253, 253, 0.1);
+    border-radius: 16px; /* Smooth rounded corners */
+    width: calc(33.33% - 20px); /* Three cards per row, accounting for gap */
+    max-width: 300px; /* Maximum width of each card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover effects */
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    border-radius: 16px; /* Ensures content aligns with rounded corners */
+}
+
+.card-image {
+    width: 100%; /* Full width of the card */
+    height: auto;
+    border-radius: 16px 16px 0 0; /* Rounded corners at the top */
+    transition: transform 0.3s ease; /* Smooth transition for image scaling */
+}
+
+.cards-title {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #fff5f5;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lifts card on hover */
+    box-shadow: 0 4px 20px rgba(255, 253, 253, 0.2); /* Enhances shadow on hover */
+}
+
+.card:hover .card-image {
+    transform: scale(1.05); /* Zooms in the image on hover */
+}
+
+@media screen and (max-width: 768px) {
+    .main-container {
+        width: 95%;
+    }
+    .card-wrapper {
+        width: 100%; /* Cards take full width on smaller screens */
+    }
+}

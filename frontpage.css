@@ -1,0 +1,313 @@
+
+body, html {
+    height: auto;
+}
+
+
+/* Basic reset for margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #121316;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column; /* Ensures vertical layout */
+    align-items: center; /* Aligns children in the center */
+    gap: 20px; /* Adds space between the children */
+    padding: 20px;
+    width: 95%; /* Adjusts the width of the container */
+    max-width: 700px; /* Ensures the container does not get too wide on larger screens */
+    margin-top: 90px;
+}
+
+
+@media (max-width: 768px) {
+    .main-container {
+        display: flex;
+    flex-direction: column; /* Ensures vertical layout */
+    align-items: center; /* Aligns children in the center */
+    gap: 20px; /* Adds space between the children */
+    padding: 20px;
+    width: 110%; /* Adjusts the width of the container */
+    max-width: 700px; /* Ensures the container does not get too wide on larger screens */
+    margin-top: 90px;
+    }
+}
+.text-container {
+    width: 200%; /* Makes child containers take full width of the parent */
+    padding: 20px;
+    
+    
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    
+       
+    
+    /* Centers the text */
+}   
+
+.model-container{
+    width: 80%;
+    height: 400px; /* Adjusted height */
+    padding: 20px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .text-container, .model-container {
+        font-size: 20px; /* Smaller font size for smaller devices */
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .text-container, .model-container {
+        font-size: 20px; /* Slightly larger font size for tablets and small desktops */
+    }
+}
+
+@media (min-width: 1025px) {
+    .text-container, .model-container {
+        font-size: 50px; /* Larger font size for large screens */
+    }
+}
+
+
+@media (max-width: 768px) {
+    .text-container {
+        font-size: 20px;
+        width: 100%; /* Smaller font size for smaller devices */
+    }
+}
+
+
+.card-container {
+    border-color: transparent;
+    border-radius: 20px; /* Adjusts the corner radius of the cards */
+    display: flex;
+    justify-content: space-around; /* Distributes space evenly around items */
+    flex-wrap: wrap; /* Allows items to wrap onto multiple lines as needed */
+    width: 1000px; /* Takes the full width of its parent */
+    gap: 15px; /* Adds space between cards */
+    padding: 10px 0;
+    max-width: 1000px; /* Adds some vertical padding */
+    
+}
+
+.card {
+    border: 2px solid transparent;  /* Prevents layout shift */
+    overflow: hidden;  /* Ensures nothing spills out of the card's rounded corners */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for border color and shadow */
+    border-radius: 16px; /* Adjusts the corner radius of the cards */
+    border-style: solid;
+    flex: 1; /* Each card will grow to fill the available space */
+    min-width: 90px; /* Minimum width for each card to ensure they don't get too small */
+    height: 150px; /* Set a fixed height for visualization */
+    background-color: #1c1c1c; /* Background color for visualization */
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+     /* Just for visualization */
+    color: #333; /* Text color */
+    font-size: 16px; /* Text size */
+}
+
+
+.card:hover {
+    border-color: #3498db; /* Highlight color on hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Optional: adds a shadow for better focus */
+}
+
+
+
+/* Responsive adjustments for cards */
+@media (max-width: 768px) {
+    .card {
+        font-size: 14px; /* Smaller font size for smaller devices */
+        min-width: 100px; /* Adjust minimum width for smaller screens */
+        flex: 0 0 auto;           /* Cards do not grow or shrink and are not forced into a new line */
+        min-width: 150px;         /* Minimum width of each card */
+        margin-right: 10px;       /* Space between cards */
+        white-space: normal;      /* Allows normal text wrapping inside cards */
+    }
+}
+
+
+.card a {
+    color: #333; /* Text color */
+    text-decoration: none; /* Removes underline from links */
+    display: flex; /* Ensures flexbox properties apply */
+    flex-direction: column; /* Arranges image and text vertically */
+    align-items: center; /* Centers the content horizontally */
+    justify-content: center; /* Centers the content vertically */
+    height: 100%; /* Takes full height of the parent */
+    width: 100%; /* Takes full width of the parent */
+}
+
+.card img {
+    width: 100%; /* Ensures the image covers the full width of the card */
+    height: 100%; /* Ensures the image covers the full height of the card */
+    object-fit: cover; /* Ensures the image covers the area without losing its aspect ratio */
+    transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+    border-radius: 20px; /* Ensures images in the card match the card's rounded corners */
+    display: block; /* Removes bottom space/margin */
+    
+
+    max-width: 100%; /* Ensures the image is responsive and fits inside the card */
+    border-radius: 5px; /* Optional: Rounds the corners of the image */
+}
+
+.card:hover img {
+    transform: scale(1.1); /* Slightly zooms the image on hover */
+}
+
+
+.card p {
+    margin-top: 10px; /* Adds some space between the image and the text */
+}
+
+.cards-title {
+    text-align: center; /* Centers the title text */
+    color: white; /* Adjust the color to fit your design */
+    font-size: 15px; /* Adjust the size as needed */
+    padding: 10px 0; /* Adds some padding above and below the title */
+    font-family: Arial, sans-serif; /* Matches the font of your body */
+}
+
+
+.card-wrapper {
+    flex-basis: calc(33.33% - 150px); /* For a 3-column layout, adjust the percentage for different layouts */
+    display: flex;
+    flex-direction: column; /* Ensures the card and title stack vertically */
+    align-items: center; /* Centers the card and title */
+}
+
+@media (max-width: 768px) {
+    .card-wrapper {
+        flex-basis: 12%; /* Full width for smaller screens */
+    }
+}
+
+.header-card-title {
+    text-align: center; /* Centers the title text */
+    color: white; /* Adjust the color to fit your design */
+    font-size: 20px; /* Adjust the size as needed */
+    padding: 1px 0px; /* Adds some padding above and below the title */
+    margin-top: 50px;
+    font-family: Arial, sans-serif; /* Matches the font of your body */
+}
+
+.header-desc-card-title
+{
+
+    text-align: center; /* Centers the title text */
+    color: #FFFFFF66; /* Adjust the color to fit your design */
+    font-size: 20px; /* Adjust the size as needed */
+    padding: 1px 0px; /* Adds some padding above and below the title */
+    font-family: Arial, sans-serif; /* Matches the font of your body */
+}
+
+.explore-button {
+    display: inline-block; /* Allows the use of padding and makes the element behave more like a button */
+    text-align: center; /* Centers the text */
+    color: #FFFFFF66; /* Adjust the color to fit your design, made it fully opaque */
+    font-size: 17px; /* Adjust the size as needed */
+    padding: 12px 24px; /* Adds more padding around the text to make the button larger */
+    margin-top:15px;
+    font-family: Arial, sans-serif; /* Matches the font of your body */
+    border-radius: 20px; /* Gives the button rounded corners. Adjust as needed */
+    background-color: #ffffff0f; /* Example blue background color, adjust to fit your design */
+    border: none; /* No border by default, add or adjust as needed */
+    cursor: pointer; /* Changes the cursor to a pointer when hovering over the button to indicate it's clickable */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.explore-button:hover {
+    color: #ffffff; /* Darker shade when hovered for visual feedback */
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        display: flex;            /* Ensures cards are laid out in a row */
+        overflow-x: auto;         /* Allows horizontal scrolling within the container */
+        white-space: nowrap;      /* Prevents wrapping of items */
+        padding: 10px 0;          /* Adds vertical padding without affecting horizontal scrolling */
+        width: 100%;              /* Ensures the container does not exceed the viewport width */
+        box-sizing: border-box;   /* Includes padding in the element's total width */
+    }
+}
+
+.card:last-child {
+    margin-right: 0;          /* Removes right margin from the last card */
+}
+
+.orb-container{
+    width: 80%;
+    margin-top: 20px;
+    height: 400px; /* Adjusted height */
+    padding: 10px;
+     /* Just for visualization */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .orb-container {
+        width: 80%;
+        margin-top: 20px;
+        height: 400px; /* Adjusted height */
+        padding: 10px;
+         /* Just for visualization */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+#instruction {
+    position: absolute;
+    top: 60%; /* Closer to the top */
+    left: 42%; /* Center horizontally */
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 20px;
+    pointer-events: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    #instruction {
+        position: absolute;
+        top: 58%; /* Closer to the top */
+        left: 46%; /* Center horizontally */
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 20px;
+        pointer-events: none;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 10px;
+        border-radius: 8px;
+    }
+}

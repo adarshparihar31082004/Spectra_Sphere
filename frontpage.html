@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Flexbox Layout</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+    <link rel="stylesheet" href="frontpage.css">
+    <script src="https://cdn.jsdelivr.net/npm/three@0.127.0/build/three.min.js"></script>
+    <!-- Include Three.js -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.127.0/build/three.min.js"></script>
+<!-- Include GLTFLoader -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.127.0/examples/js/loaders/GLTFLoader.js"></script>
+
+
+    <link rel="stylesheet" href="navbar.css">
+    
+
+    
+</head>
+<body>
+
+
+    <div id="navbar-placeholder"></div>
+
+
+    <div class="main-container">
+        <div class="text-container">
+            <p>Get the job done with interactive 3D and AR
+                WITH SPECTRA SPHERE
+            </p>
+        </div>
+        <div class="model-container" id="model-container">
+            <!-- Your 3D model will go here. This is just a placeholder. -->
+            
+        </div>
+
+        <div class="header-card-title"><h2>Explore the examples</h2></div>
+        <div class="header-desc-card-title">Try interacting with 3D models by opening it.</div>
+
+        <div class="card-container">
+            <div class="card-wrapper">
+                <div class="card">
+                    <a href="main.html">
+                        <img src="gamepad.jpg" alt="Card 1 Image" class="card-image">
+                        
+                    </a>
+                    
+                </div>
+        
+                <div class="cards-title">Models</div>
+        
+                </div>
+                <div class="card-wrapper">
+                <div class="card">
+                    <a href="index.html">
+                        <img src="gamepad.jpg" alt="Card 1 Image" class="card-image">
+                       
+                    </a>
+                    
+                </div>
+                <div class="cards-title">AR</div>
+                </div>
+                <div class="card-wrapper">
+                <div class="card">
+                    <a href="index.html">
+                        <img src="gamepad.jpg" alt="Card 1 Image" class="card-image">
+                        
+                    </a>
+                    
+                </div>
+                <div class="cards-title">Interactive 3D Experience</div>
+                </div>
+                <div class="card-wrapper">
+                <div class="card">
+                    <a href="index.html">
+                        <img src="gamepad.jpg" alt="Card 1 Image" class="card-image">
+                        
+                    </a>
+                </div>
+                <div class="cards-title">Cars</div>
+                </div>
+                <div class="card-wrapper">
+                <div class="card">
+                    <a href="index.html">
+                        <img src="gamepad.jpg" alt="Card 1 Image" class="card-image">
+                        
+                    </a>
+                </div>
+                <div class="cards-title">Space</div>
+                </div>
+            </div>
+            <div>
+            <a href="models-cards.html"> <!-- Link to the cards page -->
+                <button class="explore-button">See all examples</button>
+            </a>
+          </div>
+
+            <div class="orb-container" id="orb-container">
+
+            </div>
+
+         <div>
+            <div class="orb-main-container">
+                <div class="orb-text-container">
+                    <p>FEEL THE CHANGES IN THE MODELS AND SEE IT HAPPEN
+                        FEEL THE CHANGES IN THE MODELS AND SEE IT HAPPEN
+                        FEEL THE CHANGES IN THE MODELS AND SEE IT HAPPEN
+                        FEEL THE CHANGES IN THE MODELS AND SEE IT HAPPEN
+                        FEEL THE CHANGES IN THE MODELS AND SEE IT HAPPEN
+                        FEEL THE CHANGES IN THE MODELS AND SEE IT HAPPEN
+                        FEEL THE CHANGES IN THE MODELS AND SEE IT HAPPEN
+
+                    </p>
+                </div>
+                
+               
+                
+
+         
+         
+
+        
+
+            
+
+            
+            <script>
+                function loadNavbar() {
+                    const navbarPlaceholder = document.getElementById('navbar-placeholder');
+                    fetch('navbar.html')
+                        .then(response => response.text())
+                        .then(html => {
+                            navbarPlaceholder.innerHTML = html;
+                            initializeNavbar(); // Initialize navbar functionality after it is loaded
+                        })
+                        .catch(error => console.error('Error loading the navbar:', error));
+                }
+            
+                document.addEventListener('DOMContentLoaded', loadNavbar);
+            </script>
+            
+            
+            
+    <script type="module" src="models.js"></script>
+    <script src="navbar.js" ></script>
+    <script type="module" src="front-page-orb.js"></script>
+   
+
+</body>
+</html>
+
+

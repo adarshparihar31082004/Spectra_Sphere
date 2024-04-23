@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>WebXR AR Scene</title>
+    <link rel="stylesheet" href="main.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r126/three.js" crossorigin="anonymous"></script>
+    <script type="module">
+         import * as THREE from 'https://cdn.skypack.dev/three@0.129.0/build/three.module.js';
+        import { GLTFLoader } from 'https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/GLTFLoader.js';
+        import { ARButton } from 'https://cdn.skypack.dev/three@0.129.0/examples/jsm/webxr/ARButton.js';
+
+        // Scene setup
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.01, 20);
+
+        // Renderer setup with WebXR enabled
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.xr.enabled = true;
+        document.body.appendChild(renderer.domElement);
+
+        // Add ARButton to initiate AR session
+        document.body.appendChild(ARButton.createButton(renderer));
+
+        const ambientLight = new THREE.AmbientLight(0x404040, 1);
+        scene.add(ambientLight);
+
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 5);
+        directionalLight.position.set(5, 3, 5);
+        scene.add(directionalLight);
+
+        const pointLight = new THREE.PointLight(0xffffff, 1, 100);
+        pointLight.position.set(5, 5, 5);
+        scene.add(pointLight);
+
+        const spotLight = new THREE.SpotLight(0xffffff);
+        spotLight.position.set(11, 11, 13);
+        spotLight.target.position.set(0, 0, 0);
+        scene.add(spotLight);
+        scene.add(spotLight.target);
+
+        const hemisphereLight = new THREE.HemisphereLight(0xffffbb, 0x080820, 5);
+        scene.add(hemisphereLight);
+
+        // Load GLB Model
+        const loader = new GLTFLoader();
+        loader.load('/front-page-orb/orb.glb', function(gltf) {
+            const model = gltf.scene;
+            model.position.set(0, 0, -1); // Closer to the camera
+            model.scale.set(5, 5, 5); // Larger scale
+            scene.add(model);
+        }, undefined, function(error) {
+            console.error('An error happened loading the model:', error);
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', onWindowResize, false);
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        // Animation loop with WebXR support
+        function animate() {
+            renderer.setAnimationLoop(render);
+        }
+
+        function render() {
+            renderer.render(scene, camera);
+        }
+
+        animate();
+
+        document.getElementById('goBackButton').addEventListener('click', function() {
+            window.location.href = 'frontpage.html'; // Change 'index.html' to your main page URL
+        });
+    </script>
+</head>
+<body>
+    <button id="goBackButton">Go Back</button>
+</body>
+</html>
